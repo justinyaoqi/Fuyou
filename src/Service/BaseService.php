@@ -15,7 +15,7 @@ class BaseService
 {
     /**
      * @param null $data
-     * @param bool $Encode
+     * @param bool $Encode                                      
      * @param string $method
      * @param string $extendUrl
      * @return mixed
