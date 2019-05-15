@@ -1,14 +1,11 @@
 <?php
  namespace Yaoqi\Fuyou\Support;
-
-
  class Curl 
  {
     public static function get($url)
     {
         return self::execute($url, 'get');
     }
-
     /**
      * @param $url
      * @param string $method 'post' or 'get'

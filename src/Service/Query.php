@@ -1,8 +1,5 @@
 <?php
-
-
 namespace Yaoqi\FuYou\Service;
-
 
 use Yaoqi\FuYou\Kernel;
 
@@ -33,7 +30,7 @@ class Query extends BaseService
         $postData['amt'] = $amt;
         return self::request(__FUNCTION__, $postData);
     }
-    public static function withdraw($amt,$feeAmt)
+    public static function withdraw($amt, $feeAmt)
     {
         $postData = [];
         $postData['ins_cd'] = Kernel::getApi()->organizationNumber;
@@ -46,7 +43,7 @@ class Query extends BaseService
         return self::request(__FUNCTION__, $postData);
     }
 
-    public static function queryChnlPayAmt($start_date,$end_date,$start_index,$end_index)
+    public static function queryChnlPayAmt($start_date, $end_date, $start_index, $end_index)
     {
         $postData = [];
         $postData['ins_cd'] = Kernel::getApi()->organizationNumber;
