@@ -3,11 +3,11 @@
 namespace Yaoqi\Fuyou\Support;
 
 
-use Jsdsx\FuYou\Kernel;
+use Yaoqi\FuYou\Kernel;
 
 /**
  * Class Log
- * @package Jsdsx\FuYou\Support
+ * @package Yaoqi\FuYou\Support
  * @method void error(string $message,array $context = []) static 错误日志;
  * @method void debug(string $message,array $context = []) static 调试日志;
  * @method void info(string $message,array $context = []) static 普通日志;
@@ -31,7 +31,7 @@ class Log
     private static function init()
     {
         if (static::$logger === null) {
-            $config = Kernel::getConfig('log', array('class' => 'Jsdsx\FuYou\Support\Logger'));
+            $config = Kernel::getConfig('log', array('class' => 'Yaoqi\FuYou\Support\Logger'));
             $class = $config['class'];
             unset($config['class']);
             static::$logger = new $class($config);
