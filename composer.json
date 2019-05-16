@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Yaoqi\\Fuyou": "src/"
+            "Yaoqi\\Fuyou\\": "src/"
         }
     }
 }
