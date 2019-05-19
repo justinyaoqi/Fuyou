@@ -3,8 +3,8 @@
 namespace Yaoqi\Fuyou\Service;
 
 use Yaoqi\Fuyou\Service\BaseService;
-use Yaoqi\Fuyou\Support\SplitContstant;
-
+use Yaoqi\Fuyou\Support\SplitConstant;
+use Yaoqi\Fuyou\Support\Curl;
 /**
  * 微信支付类
  */
@@ -96,9 +96,9 @@ class PayRequest extends BaseService
     }
     public function request()
     {
-       $wxpayurl= SplitContstant::$WX_PAY;
-       $this->setVer(SplitContstant::$ver);
-       $this->setMchntCd(SplitContstant::$mchntCd);
+       $wxpayurl= SplitConstant::$WX_PAY;
+       $this->setVer(SplitConstant::$ver);
+       $this->setMchntCd(SplitConstant::$mchntCd);
       // $this->setMchntTxnSsn($this->getOrder());
        $data=Curl::post($wxpayurl,json_encode(self));
        return $data;

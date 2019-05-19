@@ -1,12 +1,9 @@
 <?php
 namespace Yaoqi\Fuyou\Support;
-
-class SplitContstant
+const HTTP_URL = "http://180.168.100.155:8069/sub-account";
+  class SplitConstant
 {
-
-
-    const HTTP_URL = "http://180.168.100.155:8069/sub-account";
-
+    
     public static $ver="0.44";
     public static $mchntCd="0002900F8001227";
     public static $mchntTxnSsn="";

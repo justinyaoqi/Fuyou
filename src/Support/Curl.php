@@ -60,8 +60,8 @@
                     'error' => curl_error($ch),
                 ) + curl_getinfo($ch);
         }
-        Log::error("error",$errors);
-        Log::debug('url:'.$url,$postData);
+        //Log::error("error",$errors);
+        //Log::debug('url:'.$url,$postData);
 
         curl_close($ch);
         return $output;
