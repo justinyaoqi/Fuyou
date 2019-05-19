@@ -53,15 +53,8 @@
         if (!empty($options)) {
             curl_setopt_array($ch, $options);
         }
-
-        if (!($output = curl_exec($ch))) {
-            $errors = array(
-                    'errno' => curl_errno($ch),
-                    'error' => curl_error($ch),
-                ) + curl_getinfo($ch);
-        }
-        //Log::error("error",$errors);
-        //Log::debug('url:'.$url,$postData);
+        $output = curl_exec($ch);
+       
 
         curl_close($ch);
         return $output;
