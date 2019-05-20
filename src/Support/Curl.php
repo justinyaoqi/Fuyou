@@ -21,43 +21,47 @@
      */
     public static function execute($url, $method, $postData = null, $options = array(), &$errors = array())
     {
-        $ch = curl_init();
+        $url = str_replace(' ', '+', $url);
+        var_dump($url);
+        var_dump($postData);
+      $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 150); //设置cURL允许执行的最长秒数
-        curl_setopt($ch,CURLOPT_HEADER,0);
+        //curl_setopt($ch,CURLOPT_HEADER,0);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json; charset=utf-8',
             'Content-Length:' . strlen($postData)
         )
         );
         //https请求 不验证证书和host
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+//        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+  //      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, true);
 
-        if (strtolower($method) === 'post') {
-            curl_setopt($ch, CURLOPT_POST, true);
-            if ($postData !== null) {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, ($postData));
-            }
-        } else if (strtolower($method) === 'get' && $postData !== null) {
+  //      if (strtolower($method) === 'post') {
+           // curl_setopt($ch, CURLOPT_POST, true);
+           // if ($postData !== null) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+         //   }
+       // } else if (strtolower($method) === 'get' && $postData !== null) {
 
-            foreach ($postData as $key => $val) {
-                if (strpos($url, '?')) {
-                    $url .= "&" . $key . "=" . $val;
-                } else {
-                    $url .= "?" . $key . "=" . $val;
-                }
-            }
+          //  foreach ($postData as $key => $val) {
+               // if (strpos($url, '?')) {
+                 //   $url .= "&" . $key . "=" . $val;
+               // } else {
+               //     $url .= "?" . $key . "=" . $val;
+             //   }
+           // }
 
 
-            curl_setopt($ch, CURLOPT_URL, $url);
-        }
+         //   curl_setopt($ch, CURLOPT_URL, $url);
+       // }
 
-        if (!empty($options)) {
-            curl_setopt_array($ch, $options);
-        }
+      //  if (!empty($options)) {
+           // curl_setopt_array($ch, $options);
+    //    }
         $output = curl_exec($ch);
+
        var_dump($output);
 
         curl_close($ch);
