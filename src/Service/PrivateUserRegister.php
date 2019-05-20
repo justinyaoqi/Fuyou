@@ -43,8 +43,8 @@ class PrivateUserRegister extends BaseService
     public function Request()
     {
         $url=SplitConstant::$ADD_PRI_USER;
-        $this->setVer(SplitContstant::$ver);
-        $this->setMchntCd(SplitContstant::$mchntCd);
+        $this->setVer(SplitConstant::$ver);
+        $this->setMchntCd(SplitConstant::$mchntCd);
         $this->setMchntTxnSsn($this->getOrder());
         $data=Curl::post($url,json_encode(self));
         return $data;
