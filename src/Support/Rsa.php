@@ -18,6 +18,9 @@ class Rsa
         //     "-----END RSA PRIVATE KEY-----";
         // ($res) or die('您使用的私钥格式错误，请检查RSA私钥配置');
         $privKeyId = openssl_pkey_get_private($priKey, '');
+        if (!$privKeyId) {
+            die("error::privKeyId 错误");
+        }
         $signature = '';
         openssl_sign($signString, $signature, $privKeyId);
         openssl_free_key($privKeyId);
