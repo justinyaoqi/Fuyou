@@ -2,7 +2,7 @@
 namespace Yaoqi\Fuyou\Service;
 
 use Yaoqi\Fuyou\Service\BaseService;
-
+use Yaoqi\Fuyou\Support\SplitConstant;
 //开户
 class PrivateUserRegister extends BaseService
 {
@@ -43,7 +43,7 @@ class PrivateUserRegister extends BaseService
     }
     public function Request()
     {
-        $url=SplitContstant::ADD_PRI_USER;
+        $url=SplitConstant::ADD_PRI_USER;
         $this->setVer(SplitContstant::$ver);
         $this->setMchntCd(SplitContstant::$mchntCd);
         $this->setMchntTxnSsn($this->getOrder());
