@@ -28,7 +28,7 @@
         curl_setopt($ch,CURLOPT_HEADER,0);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json; charset=utf-8',
-            'Content-Length:' . strlen($postData))
+            'Content-Length:' . strlen($postData)
         )
         );
         //https请求 不验证证书和host
