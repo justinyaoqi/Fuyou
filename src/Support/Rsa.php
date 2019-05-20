@@ -11,12 +11,6 @@ class Rsa
      */
     public static function getSign($signString, $priKey)
     {
-       // var_dump($signString);
-        //var_dump($priKey);
-        // $res = "-----BEGIN RSA PRIVATE KEY-----" . PHP_EOL .
-        // wordwrap($priKey, 64, "\n", true) .
-        //     "-----END RSA PRIVATE KEY-----";
-        // ($res) or die('您使用的私钥格式错误，请检查RSA私钥配置');
         $privKeyId = openssl_pkey_get_private($priKey, '');
         if (!$privKeyId) {
             die("error::privKeyId 错误");
