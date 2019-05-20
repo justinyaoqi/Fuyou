@@ -26,15 +26,18 @@
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 150); //设置cURL允许执行的最长秒数
         curl_setopt($ch,CURLOPT_HEADER,0);
-
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json; charset=utf-8'
+        )
+        );
         //https请求 不验证证书和host
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, true);
 
         if (strtolower($method) === 'post') {
             curl_setopt($ch, CURLOPT_POST, true);
             if ($postData !== null) {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, ($postData));
             }
         } else if (strtolower($method) === 'get' && $postData !== null) {
 
