@@ -58,7 +58,7 @@
             curl_setopt_array($ch, $options);
         }
         $output = curl_exec($ch);
-       
+       var_dump($output);
 
         curl_close($ch);
         return $output;
