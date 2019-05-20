@@ -1,6 +1,5 @@
 <?php
 namespace Yaoqi\Fuyou\Service;
-
 use Yaoqi\Fuyou\Service\BaseService;
 use Yaoqi\Fuyou\Support\SplitConstant;
 //开户
