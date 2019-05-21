@@ -10,53 +10,53 @@ use Yaoqi\Fuyou\Support\SplitContstant;
  */
 class UserRegister extends BaseService
 {
-    private $custNm;
-    private $brandName;
-    private $unifiedCode;
-    private $businessLicense;
+    public $custNm;
+    public $brandName;
+    public $unifiedCode;
+    public $businessLicense;
     /**
      * 营业执照有效期
      *
      * @var [type]
      */
-    private $licenseIndate;
+    public $licenseIndate;
     /**
      * 税务登记号
      *
      * @var [type]
      */
-    private $taxNum;
+    public $taxNum;
     /**
      * 税务登记号
      *
      * @var [type]
      */
-    private $orgNum;
+    public $orgNum;
     /**
      * 法人姓名
      *
      * @var [type]
      */
-    private $artifNm;
+    public $artifNm;
 
-    private $contact;
-    private $certifId;
-    private $mobileNo;
-    private $email;
-    private $bankLicense;
-    private $cityId;
-    private $bankNm;
-    private $agreemnet;
+    public $contact;
+    public $certifId;
+    public $mobileNo;
+    public $email;
+    public $bankLicense;
+    public $cityId;
+    public $bankNm;
+    public $agreemnet;
     /**
      * 账号
      *
      * @var [type]
      */
-    private $capacntno;
-    private $accessory1;
-    private $accessory2;
-    private $companyOrgNum;
-    private $parentBankId;
+    public $capacntno;
+    public $accessory1;
+    public $accessory2;
+    public $companyOrgNum;
+    public $parentBankId;
 
     public function __construct($custNm, $brandName, $unifiedCode, $businessLicense,
         $licenseIndate, $taxNum, $orgNum, $companyOrgNum, $artifNm, $contact,

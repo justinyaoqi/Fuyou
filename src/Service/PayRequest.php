@@ -10,38 +10,38 @@ use Yaoqi\Fuyou\Support\Curl;
  */
 class PayRequest extends BaseService
 {
-    private $paymentType;
-    private $channel;
-    private $intoAccount;
-    private $amt;
-    private $purpose;
-    private $goodsType;
-    private $subject;
-    private $goodsDes;
-    private $goodsTag;
-    private $goodsQuanity;
+    public $paymentType;
+    public $channel;
+    public $intoAccount;
+    public $amt;
+    public $purpose;
+    public $goodsType;
+    public $subject;
+    public $goodsDes;
+    public $goodsTag;
+    public $goodsQuanity;
     /**
      * 分账编号
      *
      * @var [type]
      */
-    private $splistSsn;
-    private $splitType;
-    private $termIp;
-    private $reserveddeviceInfo;
-    private $addnInfo;
-    private $notifyUrl;
-    private $frontnotifyUrl;
-    private $limitPay;
-    private $orderType;
-    private $openId;
-    private $subOpenId;
-    private $subAppid;
-    private $reservedFyTermId;
-    private $reservedExpireMinute;
-    private $reservedUserCreid;
-    private $reservedUserTrueName;
-    private $reservedUserMobile;
+    public $splistSsn;
+    public $splitType;
+    public $termIp;
+    public $reserveddeviceInfo;
+    public $addnInfo;
+    public $notifyUrl;
+    public $frontnotifyUrl;
+    public $limitPay;
+    public $orderType;
+    public $openId;
+    public $subOpenId;
+    public $subAppid;
+    public $reservedFyTermId;
+    public $reservedExpireMinute;
+    public $reservedUserCreid;
+    public $reservedUserTrueName;
+    public $reservedUserMobile;
 
     /**
      * 微信支付初始化

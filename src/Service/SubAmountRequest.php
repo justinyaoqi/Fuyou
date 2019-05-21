@@ -6,10 +6,10 @@ use Yaoqi\Fuyou\Service\BaseService;
  */
 class SubAmountRequest extends BaseService 
 {
-    private $custNm;
-    private $spliteSsn;
-    private $mchntTxnNum;
-    private $orgNum;//机构号
+    public $custNm;
+    public $spliteSsn;
+    public $mchntTxnNum;
+    public $orgNum;//机构号
     
     public function __construct($custNm,$spliteSsn,$mchntTxnNum,$orgNum)
     {

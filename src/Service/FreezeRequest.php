@@ -7,8 +7,8 @@ use Yaoqi\Fuyou\Service\BaseService;
  */
 class FreezeRequest extends BaseService
 {
-    private $loginId;
-    private $amt;
+    public $loginId;
+    public $amt;
     public function __construct($loginId, $amt)
     {
         $this->loginId = $loginId;

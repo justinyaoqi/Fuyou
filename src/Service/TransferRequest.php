@@ -4,11 +4,11 @@ use Yaoqi\Fuyou\Service\BaseService;
 
 class TransferRequest extends BaseService 
 {
-    private $loginId;
-    private $purpose;
-    private $amt;
-    private $splitSsn;
-    private $type;
+    public $loginId;
+    public $purpose;
+    public $amt;
+    public $splitSsn;
+    public $type;
 
 public function __construct($loginId,$purpose,$amt,$splitSsn,$type)
 {

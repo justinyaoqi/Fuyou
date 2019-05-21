@@ -5,16 +5,16 @@ use Yaoqi\Fuyou\Service\BaseService;
 
 class UpdateUserRequest extends BaseService
 {
-    private $loginId;
-    private $userType;
-    private $mobileNo;
-    private $custNm; //企业名称
-    private $bankLicense; //开户银行许可
-    private $artifNm;
-    private $cityId;
-    private $parentBankId; //开户行行别
-    private $bankNm;
-    private $capacntno;
+    public $loginId;
+    public $userType;
+    public $mobileNo;
+    public $custNm; //企业名称
+    public $bankLicense; //开户银行许可
+    public $artifNm;
+    public $cityId;
+    public $parentBankId; //开户行行别
+    public $bankNm;
+    public $capacntno;
 
     public function __construct($loginId, $userType, $mobileNo, $custNm, $bankLicense, $artifNm, $cityId, $parentBankId, $bankNm, $capacntno)
     {

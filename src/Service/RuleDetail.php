@@ -5,20 +5,20 @@ use Yaoqi\Fuyou\Service\BaseService;
 
 class RuleDetail extends BaseService
 {
-    private $rowId;
-    private $splitSsn;
-    private $contractName;
-    private $contractSsn;
-    private $participant;
-    private $startDate;
-    private $endDate;
-    private $splitScale;
-    private $splitAmt;
-    private $splitAccount;
+    public $rowId;
+    public $splitSsn;
+    public $contractName;
+    public $contractSsn;
+    public $participant;
+    public $startDate;
+    public $endDate;
+    public $splitScale;
+    public $splitAmt;
+    public $splitAccount;
 
-    private $priorityLev;
-    private $accessory1;
-    private $accessory2;
+    public $priorityLev;
+    public $accessory1;
+    public $accessory2;
 
     public function __construct($rowId, $splitSsn, $contractName,
         $contractSsn, $participant, $startDate, $endDate, $splitScale,

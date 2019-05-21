@@ -5,8 +5,8 @@ use Yaoqi\Fuyou\Service\BaseService;
 
 class UnfreezeRequest extends BaseService 
 {
-    private $loginId;
-    private $amt;
+    public $loginId;
+    public $amt;
     
 
 

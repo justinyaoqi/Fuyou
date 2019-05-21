@@ -5,8 +5,8 @@ use Yaoqi\Fuyou\Service\BaseService;
 
 class BalanceRequest extends BaseService 
 {
-    private $mchntTxnDt;
-    private $custNo;
+    public $mchntTxnDt;
+    public $custNo;
     
     public function getSecret()
     {

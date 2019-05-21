@@ -6,11 +6,11 @@ use Yaoqi\Fuyou\Service\BaseService;
 
 class RechargeRequest extends BaseService
 {
-    private $loginId;
-    private $amt;
-    private $pageNotifyUrl;
-    private $backNotifyUrl;
-    private $channel;
+    public $loginId;
+    public $amt;
+    public $pageNotifyUrl;
+    public $backNotifyUrl;
+    public $channel;
 
     public function __construct($loginId, $amt, $pageNotifyUrl, $backNotifyUrl, $channel)
     {

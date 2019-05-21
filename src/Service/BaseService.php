@@ -2,16 +2,16 @@
 
 namespace Yaoqi\Fuyou\Service;
 
-use Yaoqi\Fuyou\Support\Log;
+//use Yaoqi\Fuyou\Support\Log;
 //use Yaoqi\Fuyou\Support\Json;
 
 class BaseService
 {
-    protected $ver;
-    protected $mchntCd;
-    protected $mchntTxnSsn;
-    protected $signature;
-    protected $rem; //备注信息
+    public $ver;
+    public $mchntCd;
+    public $mchntTxnSsn;
+    public $signature;
+    public $rem; //备注信息
 
     //设置备注信息
     public function setRem($rem)

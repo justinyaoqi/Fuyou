@@ -5,17 +5,17 @@ use Yaoqi\Fuyou\Service\BaseService;
 
 class QueryDealRequest extends BaseService
 {
-    private $tradeType;
-    private $payType;
-    private $startDay;
-    private $endDay;
-    private $txnSsn;
-    private $mchntTxnNum;
-    private $splitNum;
-    private $custNo;
-    private $txnSt;
-    private $pageNo;
-    private $pageSize;
+    public $tradeType;
+    public $payType;
+    public $startDay;
+    public $endDay;
+    public $txnSsn;
+    public $mchntTxnNum;
+    public $splitNum;
+    public $custNo;
+    public $txnSt;
+    public $pageNo;
+    public $pageSize;
     public function __construct($tradeType, $payType, $startDay, $endDay, $txnSsn, $mchntTxnNum, $splitNum, $custNo, $txnSt, $pageNo, $pageSize)
     {
         $this->tradeType = $tradeType;

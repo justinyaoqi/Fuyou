@@ -9,20 +9,20 @@ class ImportRuleRequest extends BaseService
      *
      * @var [type]
      */
-    private $mchntName;
-    private $splitCause;
+    public $mchntName;
+    public $splitCause;
     /**
      * 分账详细信息
      *
      * @var array
      */
-    private $splitInfo=array();
-    private $splitStartTime;
-    private $autoSplit;
-    private $accessory1;
-    private $accessory2;
-    private $splitSsn;
-    private $subType;
+    public $splitInfo=array();
+    public $splitStartTime;
+    public $autoSplit;
+    public $accessory1;
+    public $accessory2;
+    public $splitSsn;
+    public $subType;
     
 
     public function __construct($mchntName,$splitCause,$splitInfo=array(),$splitStartTime,$autoSplit,$accessory1,$accessory2,$splitSsn,$subType)

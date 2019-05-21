@@ -8,16 +8,16 @@ use Yaoqi\Fuyou\Service\BaseService;
  */
 class TransferAccountRequest extends BaseService
 {
-    private $outCustNo;
-    private $loginId;
-    private $purpose;
-    private $mchntTxnNum;
-    private $srcFuiouOrderNo;
+    public $outCustNo;
+    public $loginId;
+    public $purpose;
+    public $mchntTxnNum;
+    public $srcFuiouOrderNo;
 
-    private $inCustNo;
-    private $amt;
-    private $splitSsn;
-    private $type;
+    public $inCustNo;
+    public $amt;
+    public $splitSsn;
+    public $type;
 
     public function __construct($outCustNo, $loginId, $purpose, $mchntTxnNum, $srcFuiouOrderNo, $inCustNo, $amt, $splitSsn, $type)
     {

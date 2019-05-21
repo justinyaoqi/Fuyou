@@ -6,13 +6,13 @@ use Yaoqi\Fuyou\Service\BaseService;
  */
 class RefundRequest extends BaseService 
 {
-    private $mchntTxnNum;
-    private $paymentType;
-    private $orderType;
-    private $amt;
-    private $refundAmt;
-    private $refundReason;
-    private $rebates;
+    public $mchntTxnNum;
+    public $paymentType;
+    public $orderType;
+    public $amt;
+    public $refundAmt;
+    public $refundReason;
+    public $rebates;
     
     public function __contrust($mchntTxnNum,$paymentType,$orderType,$amt,$refundAmt,$refundReason,$rebates)
     {

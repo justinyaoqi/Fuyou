@@ -8,13 +8,13 @@ use Yaoqi\Fuyou\Service\BaseService;
  */
 class CashRefundNotifyRequest extends BaseService
 {
-    private $mchntCd;
-    private $mchntTxnSsn;
-    private $mchntTxnDt;
-    private $mobileNo;
-    private $amt;
-    private $remark;
-    private $signature;
+    public $mchntCd;
+    public $mchntTxnSsn;
+    public $mchntTxnDt;
+    public $mobileNo;
+    public $amt;
+    public $remark;
+    public $signature;
     
     public function __construct($mchntCd, $mchntTxnSsn, $mchntTxnDt, $mobileNo, $amt, $remark, $signature)
     {
