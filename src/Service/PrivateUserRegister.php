@@ -3,6 +3,7 @@ namespace Yaoqi\Fuyou\Service;
 
 use Yaoqi\Fuyou\Service\BaseService;
 use Yaoqi\Fuyou\Support\SplitConstant;
+use Yaoqi\Fuyou\Support\Curl;
 //开户
 class PrivateUserRegister extends BaseService
 {
