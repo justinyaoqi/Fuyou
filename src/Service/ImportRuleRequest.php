@@ -1,8 +1,10 @@
 <?php
 namespace Yaoqi\Fuyou\Service;
-use Yaoqi\Fuyou\Service\BaseService;
 
-class ImportRuleRequest extends BaseService 
+use Yaoqi\Fuyou\Service\BaseService;
+use Yaoqi\Fuyou\Support\SplitConstant;
+
+class ImportRuleRequest extends BaseService
 {
     /**
      * 商户名
@@ -16,29 +18,27 @@ class ImportRuleRequest extends BaseService
      *
      * @var array
      */
-    public $splitInfo=array();
-    public $splitStartTime;
-    public $autoSplit;
-    public $accessory1;
-    public $accessory2;
-    public $splitSsn;
-    public $subType;
-    
+    public $splitInfo = array();
+    public $autoSplit = 0;
+    public $splitStartTim = "";
 
-    public function __construct($mchntName,$splitCause,$splitInfo=array(),$splitStartTime,$autoSplit,$accessory1,$accessory2,$splitSsn,$subType)
+    public function __construct($mchntName, $splitCause, $splitInfo)
     {
-        $this->mchntName=$mchntName;
-        $this->splitCause=$splitCause;
-        $this->splitInfo=$splitInfo;
-        $this->splitStartTime=$splitStartTime;
-        $this->autoSplit=$autoSplit;
-        $this->accessory1=$accessory1;
-        $this->accessory2=$accessory2;
-        $this->splitSsn;
-        $this->subType=$subType;
+        $this->mchntName = $mchntName;
+        $this->splitCause = $splitCause;
+        $this->splitInfo = $splitInfo;
     }
     public function getSecret()
     {
-        return $this->mchntCd."|".$this->autoSplit;
+        return $this->mchntCd . "|" . $this->autoSplit;
+    }
+    function Request()
+    {
+        $wxpayurl = SplitConstant::$ADD_RULE;
+        $this->mchntCd = SplitConstant::$mchntCd;
+        $this->setMchntTxnSsn($this->getOrder());
+        $this->setRem("规则导入");
+        $data = Curl::post($wxpayurl, json_encode($this));
+        return $data;
     }
 }

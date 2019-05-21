@@ -78,6 +78,8 @@ class PayRequest extends BaseService
         $this->reservedUserCreid = $arr["reservedUserCreid"];
         $this->reservedUserTrueName = $arr["reservedUserTrueName"];
         $this->reservedUserMobile = $arr["reservedUserMobile"];
+        $this->setVer(SplitConstant::$ver);
+        $this->setMchntCd(SplitConstant::$mchntCd);
 
     }
     /**
@@ -97,10 +99,9 @@ class PayRequest extends BaseService
     public function request()
     {
        $wxpayurl= SplitConstant::$WX_PAY;
-       $this->setVer(SplitConstant::$ver);
-       $this->setMchntCd(SplitConstant::$mchntCd);
+      
       // $this->setMchntTxnSsn($this->getOrder());
-       $data=Curl::post($wxpayurl,json_encode(self));
+       $data=Curl::post($wxpayurl,json_encode($this));
        return $data;
     }
 }
