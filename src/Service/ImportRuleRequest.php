@@ -3,7 +3,7 @@ namespace Yaoqi\Fuyou\Service;
 
 use Yaoqi\Fuyou\Service\BaseService;
 use Yaoqi\Fuyou\Support\SplitConstant;
-
+use yaoqi\Fuyou\Support\Curl;
 class ImportRuleRequest extends BaseService
 {
     /**
@@ -18,7 +18,7 @@ class ImportRuleRequest extends BaseService
      *
      * @var array
      */
-    public $splitInfo = array();
+    public  $splitInfo  = array();
     public $autoSplit = 0;
     public $splitStartTim = "";
 

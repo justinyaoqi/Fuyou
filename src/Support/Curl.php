@@ -20,15 +20,10 @@ class Curl
    * @param array $errors
    * @return mixed
    */
-  public static function execute($url, $method, $postData = null, $options = array(), &$errors = array())
+  public static function execute($url, $method="post", $postData = null, $options = array(), &$errors = array())
   {
     
     $url = str_replace(' ', '+', $url);
-    //        var_dump($url);
-
-    echo "<pre>";
-    var_dump(json_encode($postData));
-    echo "</pre>";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -42,36 +37,10 @@ class Curl
         'Content-Length:' . strlen(json_encode($postData))
       )
     );
-    //https请求 不验证证书和host
-    //        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-    //      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, true);
-
-    //      if (strtolower($method) === 'post') {
-    // curl_setopt($ch, CURLOPT_POST, true);
-    // if ($postData !== null) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
-    //   }
-    // } else if (strtolower($method) === 'get' && $postData !== null) {
 
-    //  foreach ($postData as $key => $val) {
-    // if (strpos($url, '?')) {
-    //   $url .= "&" . $key . "=" . $val;
-    // } else {
-    //     $url .= "?" . $key . "=" . $val;
-    //   }
-    // }
-
-
-    //   curl_setopt($ch, CURLOPT_URL, $url);
-    // }
-
-    //  if (!empty($options)) {
-    // curl_setopt_array($ch, $options);
-    //    }
     $output = curl_exec($ch);
 
-    echo "curl结束";
-    var_dump($output);
 
     curl_close($ch);
     return $output;
