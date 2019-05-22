@@ -3,7 +3,7 @@ namespace Yaoqi\Fuyou\Service;
 
 use Yaoqi\Fuyou\Service\BaseService;
 use Yaoqi\Fuyou\Support\SplitConstant;
-use yaoqi\Fuyou\Support\Curl;
+use Yaoqi\Fuyou\Support\Curl;
 class ImportRuleRequest extends BaseService
 {
     /**
