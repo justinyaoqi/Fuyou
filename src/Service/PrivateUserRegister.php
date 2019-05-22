@@ -45,7 +45,7 @@ class PrivateUserRegister extends BaseService
    */
   public function getSecret()
   {
-    return    $this->artifNm . "|" . $this->mchntCd . "|" . $this->mchntTxnSsn . "|" . $this->bankNm . "|" . $this->certifId . "|" . $this->mobileNo . "|" . $this->ver;
+    return    $this->artifNm . "|" . $this->mchntCd . "|" . $this->mchntTxnSsn . "|" . $this->bankNm . "|" . $this->certifId ."|".$this->cityId. "|" . $this->mobileNo . "|" . $this->ver;
   }
   public function Request()
   {
