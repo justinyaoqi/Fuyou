@@ -3,7 +3,7 @@
 namespace Yaoqi\Fuyou\Service;
 use Yaoqi\Fuyou\Service\BaseService;
 use Yaoqi\Fuyou\Support\Curl;
-use Yaoqi\Fuyou\Support\SplitContstant;
+use Yaoqi\Fuyou\Support\SplitConstant;
 
 class WithdrawRequest extends BaseService 
 {
@@ -33,9 +33,9 @@ class WithdrawRequest extends BaseService
 
     public function Request()
     {
-        $url=SplitContstant::$WITHDRAW;
-        $this->setVer(SplitContstant::$ver);
-        $this->setMchntCd(SplitContstant::$mchntCd);
+        $url=SplitConstant::$WITHDRAW;
+        $this->setVer(SplitConstant::$ver);
+        $this->setMchntCd(SplitConstant::$mchntCd);
         $this->setMchntTxnSsn($this->getOrder());
         $data=Curl::post($url,json_encode(self));
         return $data;

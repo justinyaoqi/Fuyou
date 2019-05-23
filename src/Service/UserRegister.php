@@ -3,7 +3,7 @@ namespace Yaoqi\Fuyou\Service;
 
 use Yaoqi\Fuyou\Service\BaseService;
 use Yaoqi\Fuyou\Support\Rsa;
-use Yaoqi\Fuyou\Support\SplitContstant;
+use Yaoqi\Fuyou\Support\SplitConstant;
 
 /**
  * 开户注册请求实体类
@@ -120,14 +120,14 @@ class UserRegister extends BaseService
 
     public function Request()
     {
-        $url=SplitContstant::$WITHDRAW;
-        $this->setVer(SplitContstant::$ver);
-        $this->setMchntCd(SplitContstant::$mchntCd);
+        $url=SplitConstant::$WITHDRAW;
+        $this->setVer(SplitConstant::$ver);
+        $this->setMchntCd(SplitConstant::$mchntCd);
         $this->setMchntTxnSsn($this->getOrder());
 
         //生成签名
-        $sign=Rsa::getSign($this->getSignature,SplitContstant::$PRI_SIGN_KEY);
-        $checksign= Rsa::checkSign(SplitContstant::$PUB_SIGN_KEY,$sign,$this->getSignature);
+        $sign=Rsa::getSign($this->getSignature,SplitConstant::$PRI_SIGN_KEY);
+        $checksign= Rsa::checkSign(SplitConstant::$PUB_SIGN_KEY,$sign,$this->getSignature);
         var_dump($checksign);
         $this->setSignature($sign);
         $data=Curl::post($url,json_encode(self));
