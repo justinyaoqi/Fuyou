@@ -20,9 +20,9 @@ class Curl
    * @param array $errors
    * @return mixed
    */
-  public static function execute($url, $method="post", $postData = null, $options = array(), &$errors = array())
+  public static function execute($url, $method = "post", $postData = null, $options = array(), &$errors = array())
   {
-    
+
     $url = str_replace(' ', '+', $url);
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -49,6 +49,19 @@ class Curl
   public static function post($url, $postData)
   {
     return self::execute($url, 'post', $postData);
+  }
+  public static function objtoarr($obj)
+  {
+
+    $ret = array();
+    foreach ($obj as $key => $value) {
+      if (gettype($value) == 'array' || gettype($value) == 'object') {
+        $ret[$key] = objtoarr($value);
+      } else {
+        $ret[$key] = $value;
+      }
+    }
+    return $ret;
   }
 
   // public static function file($url, $field, $filename, $postData = array())

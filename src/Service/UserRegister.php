@@ -2,7 +2,7 @@
 namespace Yaoqi\Fuyou\Service;
 
 use Yaoqi\Fuyou\Service\BaseService;
-use Yaoqi\Fuyou\Support\Rsa;
+//use Yaoqi\Fuyou\Support\Rsa;
 use Yaoqi\Fuyou\Support\SplitConstant;
 
 /**
@@ -58,9 +58,29 @@ class UserRegister extends BaseService
     public $companyOrgNum;
     public $parentBankId;
 
-    public function __construct($custNm, $brandName, $unifiedCode, $businessLicense,
-        $licenseIndate, $taxNum, $orgNum, $companyOrgNum, $artifNm, $contact,
-        $certifId, $mobileNo, $email, $bankLicense, $cityId, $parentBankId, $bankNm, $agreement, $capacntno, $accessory1, $accessory2) {
+    public function __construct(
+        $custNm,
+        $brandName,
+        $unifiedCode,
+        $businessLicense,
+        $licenseIndate,
+        $taxNum,
+        $orgNum,
+        $companyOrgNum,
+        $artifNm,
+        $contact,
+        $certifId,
+        $mobileNo,
+        $email,
+        $bankLicense,
+        $cityId,
+        $parentBankId,
+        $bankNm,
+        $agreement,
+        $capacntno,
+        $accessory1,
+        $accessory2
+    ) {
         $this->custNm = $custNm;
         $this->brandName = $brandName;
         $this->unifiedCode = $unifiedCode;
@@ -87,50 +107,46 @@ class UserRegister extends BaseService
     public function getSecret()
     {
         return $this->artifNm . "|"
-        . $this->bankLicense . "|"
-        . $this->mchntCd . "|"
-        . $this->mchntTxnSsn . "|"
-        . $this->bankNm . "|"
-        . $this->brandName . "|"
-        . $this->capacntno . "|"
-        . $this->certifId . "|"
-        . $this->taxNum . "|"
-        . $this->licenseIndate . "|"
-        . $this->custNm . "|"
-        . $this->ver;
+            . $this->bankLicense . "|"
+            . $this->mchntCd . "|"
+            . $this->mchntTxnSsn . "|"
+            . $this->bankNm . "|"
+            . $this->brandName . "|"
+            . $this->capacntno . "|"
+            . $this->certifId . "|"
+            . $this->cityId . "|"
+            . $this->taxNum . "|"
+            . $this->licenseIndate . "|"
+            . $this->custNm . "|"
+            . $this->ver;
     }
     public function getSignMd5()
     {
-        $str=$this->artifNm."|"
-        .$this->bankLicense."|"
-        .$this->mchntCd."|"
-        .$this->mchntTxnSsn."|"
-        .$this->bankNm."|"
-        .$this->brandName."|"
-        .$this->capacntno."|"
-        .$this->certifId."|"
-        .$this->cityId."|"
-        .$this->taxNum."|"
-        .$this->licenseIndate."|"
-        .$this->custNm."|"
-        .$this->ver;
-        
+        $str = $this->artifNm . "|"
+            . $this->bankLicense . "|"
+            . $this->mchntCd . "|"
+            . $this->mchntTxnSsn . "|"
+            . $this->bankNm . "|"
+            . $this->brandName . "|"
+            . $this->capacntno . "|"
+            . $this->certifId . "|"
+            . $this->cityId . "|"
+            . $this->taxNum . "|"
+            . $this->licenseIndate . "|"
+            . $this->custNm . "|"
+            . $this->ver;
+
         return md5($str);
     }
 
     public function Request()
     {
-        $url=SplitConstant::$WITHDRAW;
+        $url = SplitConstant::$WITHDRAW;
         $this->setVer(SplitConstant::$ver);
         $this->setMchntCd(SplitConstant::$mchntCd);
         $this->setMchntTxnSsn($this->getOrder());
 
-        //生成签名
-        $sign=Rsa::getSign($this->getSignature,SplitConstant::$PRI_SIGN_KEY);
-        $checksign= Rsa::checkSign(SplitConstant::$PUB_SIGN_KEY,$sign,$this->getSignature);
-        var_dump($checksign);
-        $this->setSignature($sign);
-        $data=Curl::post($url,json_encode(self));
-        var_dump($data);
+        $data = Curl::post($url, json_encode(self));
+        return $data;
     }
 }
