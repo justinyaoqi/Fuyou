@@ -1,6 +1,6 @@
 <?php
 namespace Yaoqi\Fuyou\Support;
-use l
+
 class Curl
 {
   public static function get($url)
