@@ -1,0 +1,27 @@
+{
+    "name": "justinyaoqi/fuiou",
+    "description": "富友支付分账系统",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "姚琦",
+            "email": "yaoqiqq@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4",
+        "ext-iconv":"*",
+        "ext-simplexml":"*",
+        "ext-openssl":"*",
+        "ext-json":"*",
+        "ext-curl":"*",
+        "psr/log": "*",
+        "monolog/monolog": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yaoqi\\Fuyou\\": "src/"
+        }
+    }
+}
