@@ -26,7 +26,7 @@ class ImportRuleRequest extends BaseService
     {
         $this->mchntName = $mchntName;
         $this->splitCause = $splitCause;
-        $this->splitInfo = $splitInfo;
+        $this->splitInfo[] = $splitInfo;
     }
     public function getSecret()
     {
@@ -35,7 +35,7 @@ class ImportRuleRequest extends BaseService
     function Request()
     {
         $wxpayurl = SplitConstant::$ADD_RULE;
-        $this->mchntCd = SplitConstant::$mchntCd;
+        $this->setMchntCd(SplitConstant::$mchntCd);
         $this->setMchntTxnSsn($this->getOrder());
         $this->setRem("规则导入");
         $data = Curl::post($wxpayurl, json_encode($this));
