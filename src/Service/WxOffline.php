@@ -4,7 +4,7 @@ namespace Yaoqi\Fuyou\Service;
 use Yaoqi\Fuyou\Support\SplitConstant;
 use Yaoqi\Fuyou\Support\Curl;
 
-class WxOffice extends BaseService
+class WxOffline extends BaseService
 {
     /**
      * 开户时返回的loginid
